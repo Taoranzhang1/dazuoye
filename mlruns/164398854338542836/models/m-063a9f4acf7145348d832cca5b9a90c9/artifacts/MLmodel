@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/67257/Desktop/DMO%20work/dazuoye/mlruns/164398854338542836/models/m-063a9f4acf7145348d832cca5b9a90c9/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.9.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.1.4
+model_id: m-063a9f4acf7145348d832cca5b9a90c9
+model_size_bytes: 3627300
+model_uuid: m-063a9f4acf7145348d832cca5b9a90c9
+prompts: null
+run_id: 677503d953414f8094caaa20d3ae52f3
+utc_time_created: '2025-10-27 10:30:38.794294'

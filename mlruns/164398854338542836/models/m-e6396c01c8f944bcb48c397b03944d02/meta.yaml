@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/67257/Desktop/DMO%20work/dazuoye/mlruns/164398854338542836/models/m-e6396c01c8f944bcb48c397b03944d02/artifacts
+creation_timestamp: 1761561033085
+experiment_id: '164398854338542836'
+last_updated_timestamp: 1761561036247
+model_id: m-e6396c01c8f944bcb48c397b03944d02
+model_type: null
+name: model
+source_run_id: 7f86fdd639304e0b9deab3939f2cdc25
+status: 2
+status_message: null

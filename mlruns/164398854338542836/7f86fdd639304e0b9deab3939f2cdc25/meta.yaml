@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/67257/Desktop/DMO%20work/dazuoye/mlruns/164398854338542836/7f86fdd639304e0b9deab3939f2cdc25/artifacts
+end_time: 1761561036264
+entry_point_name: ''
+experiment_id: '164398854338542836'
+lifecycle_stage: active
+run_id: 7f86fdd639304e0b9deab3939f2cdc25
+run_name: baseline_20251027_183032
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761561032872
+status: 3
+tags: []
+user_id: '67257'

@@ -5,15 +5,9 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error
 from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
-import yaml
 from datetime import datetime
 
-def load_config():
-    with open('ml/configs/params.yaml', 'r') as f:
-        return yaml.safe_load(f)
-
 def train_model(model_version="baseline"):
-    config = load_config()
     mlflow.set_experiment("MovieRecommendation")
     
     with mlflow.start_run(run_name=f"{model_version}_{datetime.now().strftime('%Y%m%d_%H%M%S')}"):
@@ -39,15 +33,24 @@ def train_model(model_version="baseline"):
         
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         
-        params = config['models'][model_version]
-        model = RandomForestRegressor(**params, random_state=42)
+        # 硬编码参数
+        if model_version == "baseline":
+            n_estimators = 50
+            max_depth = 10
+        else:
+            n_estimators = 100
+            max_depth = 20
+        
+        model = RandomForestRegressor(n_estimators=n_estimators, max_depth=max_depth, random_state=42)
         model.fit(X_train, y_train)
         
         y_pred = model.predict(X_test)
         mse = mean_squared_error(y_test, y_pred)
         mae = mean_absolute_error(y_test, y_pred)
         
-        mlflow.log_params(params)
+        # MLflow记录
+        mlflow.log_param("n_estimators", n_estimators)
+        mlflow.log_param("max_depth", max_depth)
         mlflow.log_param("data_version", data_version)
         mlflow.log_metrics({
             "mse": mse, 
